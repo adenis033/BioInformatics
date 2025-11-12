@@ -1,0 +1,13 @@
+The algorithm tries to rebuild the DNA sequence by merging random short reads when they overlap for at least 10 basis/letters.
+
+problems with this approach:
+	1.	Overlaps in the middle are missed:
+	it only checks if a read can attach to the start or end of the current sequence.
+	if a read overlaps somewhere in the middle, it will not merge.
+	2.	Order matters:
+	reads are merged in the order they appear.
+	if multiple reads could fit in different places, the sequence may be reconstructed incorrectly.
+	3.	Incomplete reconstruction:
+	some regions may not be covered enough.
+	the reconstructed sequence can end up shorter than the original.
+    more reads more coverage, better chance of full reconstruction.
